@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<style> 
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+            background-color: whitesmoke;
+        }
+        body>div{
+            width: 30%;
+            height: 40%;
+            padding: 0.7%;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        body>div>p>img{
+            width: 20px;
+            height: 20px;
+            float: right;;
+        }
+        h2{
+            text-align: center;
+            font-size: large;
+            color: #676767;
+        }
+    
+        img{
+            width: 50%;
+            height: 28%;
+            display: block;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        #SignUpPage{
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+        #Email{
+            margin-top: 8px;
+            border: none;
+            padding: 4px 10px ;
+            outline: 0px;
+            font-size: 18px;
+            font-weight: lighter;
+            margin-bottom: 16px;
+        }
+        #Password{
+            margin-top: 8px;
+            border: none;
+            outline: 0px;
+            font-size: 18px;
+            font-weight: lighter;
+        }
+
+        #sub{
+            margin-top: 8px;
+            color: white;
+            background-color: #0ebaba;
+            border-radius: 2px;
+            padding: 7px 30px;
+            font-size: 17px;
+            border: none;
+        }
+        h3{
+            color: #0ebaba;
+            margin-top:8px ;
+            font-size: 15px;
+        }
+        #signup_tag{
+            color: #0ebaba;
+            margin-left: 8px;
+        }
+        span{
+            text-decoration: none;
+            color: #0ebaba;
+            cursor: pointer;
+        }
+        #text{
+            font-weight: lighter;
+            font-size: 16px;
+        }
+        #google{
+            margin-top: 20px;
+        }
+        #cross_tag {
+            cursor: pointer;
+            background-color: whitesmoke;
+            
+        }
+       
+         /* navbar */
+         .navbar_sticky {
+            position:sticky;
+            top: 0;
+            background-color: white;
+            z-index: 2;
+        }
+        #navbar1{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: white;
+        }
+        #navbar1>div+div{
+            display: flex;
+            justify-content: space-evenly;
+            margin-right: 10px;
+            width: 700px;
+            padding-top: 10px;
+        }
+        #navbar1>div{
+            margin-left: 100px    
+        }
+        .border{
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 5px;   
+        }  
+        #sanitised{
+            margin-top: -13px;
+            font-size: 13px;
+            margin-left:22px
+        }
+        .border:hover,.nav_color:hover{
+            color: teal;
+            cursor: pointer;
+        }
+        .nav_color{
+            padding-top: 5px;
+        }
+        #exit_Log{
+            margin-right: -25px;
+            margin-top: 4px;
+        }
+</style>
+<body>
+    <section class="navbar_sticky" name="navbar">
+        <div id="navbar1">
+            <div>
+                <div><img src="https://www.revv.co.in/grapheneImages/newopen/logo.svg" alt="No internet connection"></div>
+                <div id="sanitised">sanitised,safe</div>
+            </div>
+            <div >
+                <div class="border"><b>Hyundai</b> Subscription</div>
+                <div class="border"><b>Mahindra</b> Subscription</div>
+                <div class="nav_color">FAQs</div>
+                <div id="exit_Log"><img src="	https://www.revv.co.in/grapheneImages/newopen/ic-web-profile-login.svg" alt="error"></div>
+                <div class="nav_color">Login or Signup</div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <p id="cross_tag"><img  onclick="callme()" src="https://www.revv.co.in/imgs/cross.png" alt="x"></p>
+        <h2>LOGIN</h2>
+        
+        <div>
+            <form id="SignUpPage">
+
+                <input type="email" id="Email" placeholder="Enter Email">
+                <br>
+
+                <input type="password" id="Password" placeholder="Enter Password">
+                <br>
+                <h3>Send a new password to my email ID</h3>
+                <br>
+
+                <input type="submit" value="Login" id="sub">
+
+            </form> 
+            <h2 id="text"> Don't have a account yet?<span id="signup_tag" onclick="callmesignUp()">Sign Up</span></h2>
+
+            <img src="https://www.revv.co.in/imgs/google-login.png" alt="google" id="google">
+            <img src="https://www.revv.co.in/imgs/facebook-icon.png" alt="facebook">
+</body>
+</html>
+<script>
+    // signup page calling
+    function callmesignUp(){
+        event.preventDefault();
+        let obj = {
+            pageName : "./signup.html"
+        }
+        localStorage.setItem("page",JSON.stringify(obj));
+        window.location.href="./processing.html";
+    }
+let form=document.querySelector("#SignUpPage")      
+    form.addEventListener("submit", myFun)
+    let dataUser = JSON.parse(localStorage.getItem("userData")) || [];
+
+    function myFun(event) {
+
+        event.preventDefault();
+        let email = document.querySelector("#Email").value;
+        let pass = document.querySelector("#Password").value;
+        
+
+        if (chackEmails(email,pass) === true) {
+        
+            alert("Login Sucessfull....!");
+            localStorage.setItem("loginUser",JSON.stringify(dataUser))
+            window.location.href = "index.html"
+
+        } else {
+
+            alert("Please check your credentials...!")
+
+        }
+
+
+    }
+    function chackEmails(email,pass) {
+
+       let flag = 0;
+
+        dataUser.forEach(function(el){
+
+            if(el.Email==email&&el.Password==pass){
+                flag=1;
+            }
+
+        })
+
+        if(flag==1){
+
+            return true;
+
+        }else
+        return false;
+
+    }
+    
+    function callme(){
+        event.preventDefault();
+        let obj = {
+            pageName : "./index.html"
+        }
+        localStorage.setItem("page",JSON.stringify(obj));
+        window.location.href="./processing.html";
+        }
+
+    </script>
