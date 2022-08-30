@@ -19,39 +19,58 @@ let back=["#fff7e2",
 let image=document.getElementById("imagesOfHome")
 
 
-let next=document.getElementById("next")
-next.addEventListener("click",function(){
-  if(n===arrOfImages.length-1){
-n=0
-  }else{
-      n++
-  }
-  let div=document.createElement("div")
-  div.style.backgroundColor=back[n]
-  let img=document.createElement("img")
-  img.src=arrOfImages[n]
-  div.append(img)
-  image.innerHTML=""
-  image.append(div)
+// let next=document.getElementById("next")
+// next.addEventListener("click",function(){
+//   if(n===arrOfImages.length-1){
+// n=0
+//   }else{
+//       n++
+//   }
+//   let div=document.createElement("div")
+//   div.style.backgroundColor=back[n]
+//   let img=document.createElement("img")
+//   img.src=arrOfImages[n]
+//   div.append(img)
+//   image.innerHTML=""
+//   image.append(div)
+// })
 
-})
-let prev=document.getElementById("prev")
-prev.addEventListener("click",previous)
+// display();
 
-function previous(){
-  if(n===0){
-      n=arrOfImages.length-1
-  }else{
-      n--
-  }
-  let div=document.createElement("div")
-  div.style.backgroundColor=back[n]
-  let img=document.createElement("img")
-  img.src=arrOfImages[n]
-  div.append(img)
-  image.innerHTML=""
-  image.append(div)
+setInterval(display,3000)
+function display(){
+  
+    if(n===arrOfImages.length-1){
+      n=0
+        }else{
+            n++
+        }
+        let div=document.createElement("div")
+        div.style.backgroundColor=back[n]
+        let img=document.createElement("img")
+        img.src=arrOfImages[n]
+        div.append(img)
+        image.innerHTML=""
+        image.append(div)
+
 }
+// let prev=document.getElementById("prev")
+// prev.addEventListener("click",previous)
+
+// function previous(){
+//   if(n===0){
+//       n=arrOfImages.length-1
+//   }else{
+//       n--
+//   }
+//   let div=document.createElement("div")
+//   div.style.backgroundColor=back[n]
+//   let img=document.createElement("img")
+//   img.src=arrOfImages[n]
+//   div.append(img)
+//   image.innerHTML=""
+//   image.append(div)
+// }
 
 //second
 
